@@ -7,9 +7,11 @@ import os
 import smtplib
 
 
+
+
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-# print(voices[1].id)
+# print(voices[1].id)    https://stevemats.medium.com/solved-fix-pyaudio-pip-installation-errors-on-a-win-32-64-bit-operating-system-1efe6cd90c8d
 engine.setProperty('voice', voices[0].id)
 
 
@@ -29,7 +31,7 @@ def wishMe():
     else:
         speak("Good Evening Alex!")
 
-    speak("I am Jarvis Sir. Please tell me how may I help you Alex")
+    speak("I am ocre . Please tell me how may I help you")
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
@@ -77,12 +79,30 @@ if __name__ == "__main__":
         elif 'open youtube' in query:
             webbrowser.open("youtube.com")
 
+        elif 'apex legends' in query:
+            strApex = "Opening Apex Legends"
+            speak(f"Sir, wait while  {strApex}")
+            codePath="C:\\Program Files (x86)\\Origin Games\\Apex\\r5apex.exe"
+            os.startfile(codePath)
+
+        elif 'fortnite' in query:
+            strFortnite = "Opening fortnite"
+            speak(f"Sir, wait while  {strFortnite}")
+            codePath="com.epicgames.launcher://apps/fn%3A4fe75bbc5a674f4f9b356b5c90567da5%3AFortnite?action=launch&silent=true"
+            os.startfile(codePath)
+
+        elif 'python' in query:
+            strPython = "python was created by alex"
+            speak(f"Sir, the answer is {strPython}")
+
         elif 'open google' in query:
             webbrowser.open("google.com")
 
         elif 'open stackoverflow' in query:
             webbrowser.open("stackoverflow.com")
 
+        elif 'open github' in query:
+            webbrowser.open("github.com")
 
         elif 'play music' in query:
             music_dir = 'D:\\Non Critical\\songs\\Favorite Songs2'
@@ -92,6 +112,7 @@ if __name__ == "__main__":
 
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            print(strTime)
             speak(f"Sir, the time is {strTime}")
 
         elif 'open code' in query:
